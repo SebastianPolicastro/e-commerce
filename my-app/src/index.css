@@ -1,0 +1,296 @@
+:root {
+  --primary-color: #0077cc; /* Azul primario un poco más moderno */
+  --primary-color-dark: #005ea6;
+  --primary-color-light: #e6f3ff; /* Para hovers sutiles y fondos */
+
+  --secondary-color-bg: #cbcccc; /* GRIS MUY CLARO Y SUAVE PARA EL FONDO DEL BODY */
+  --content-bg-color: #ffffff;   /* BLANCO para las tarjetas, navbar, etc. */
+
+  --accent-color: #28a745; /* Un verde como acento (puedes cambiarlo) */
+  --accent-color-dark: #1e7e34;
+
+  --text-color-base: #212529; /* Negro suave para texto principal */
+  --text-color-muted: #6c757d; /* Gris para texto secundario */
+  --text-color-on-primary: #ffffff;
+  --text-color-on-accent: #ffffff;
+  --text-color-footer: #adb5bd;
+
+  --border-color: #dee2e6; /* Borde estándar */
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* Sombra sutil para tarjetas */
+  --card-hover-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada en hover */
+
+  --hero-bg-image: url('/images/hero-bg.jpg');
+  --hero-overlay-start: rgba(30, 40, 50, 0.7);
+  --hero-overlay-end: rgba(15, 25, 35, 0.85);
+  --hero-text-color: #ffffff;
+
+  --font-family-sans-serif: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-headings: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --footer-bg-color: #343a40; /* Gris oscuro para el footer */
+
+  --toastify-color-light: var(--content-bg-color);
+  --toastify-color-dark: var(--text-color-base);
+  --toastify-color-info: var(--primary-color);
+  --toastify-color-success: var(--accent-color);
+  --toastify-color-warning: #ffc107;
+  --toastify-color-error: #dc3545;
+}
+
+body {
+  font-family: var(--font-family-sans-serif);
+  background-color: var(--secondary-color-bg); /* Nuevo fondo para la página */
+  color: var(--text-color-base);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-headings);
+  color: var(--text-color-base);
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.8rem; } /* Un poco más pequeño */
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+.container {
+  max-width: 1180px; /* Un poco más de ancho */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  padding: 0.55rem 1.1rem; /* Ajuste ligero de padding */
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 0.3rem; /* Bordes más suaves */
+  transition: all 0.2s ease-in-out;
+}
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-success,
+.btn-outline-danger,
+.btn-outline-warning,
+.btn-outline-info,
+.btn-outline-light,
+.btn-outline-dark,
+.btn-outline-accent {
+    border-width: 1px;
+    border-style: solid;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 7px rgba(0,0,0,0.08);
+}
+.btn:active {
+  transform: translateY(0);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+.btn:disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.btn-sm {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+}
+
+.btn-primary {
+  color: var(--text-color-on-primary);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-primary:hover {
+  color: var(--text-color-on-primary);
+  background-color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+}
+
+.btn-secondary {
+  color: var(--text-color-base);
+  background-color: #e9ecef;
+  border-color: #ced4da;
+}
+.btn-secondary:hover {
+  color: var(--text-color-base);
+  background-color: #dde2e7;
+  border-color: #b9c1ca;
+}
+
+.btn-accent {
+  color: var(--text-color-on-accent);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.btn-accent:hover {
+  color: var(--text-color-on-accent);
+  background-color: var(--accent-color-dark);
+  border-color: var(--accent-color-dark);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-outline-primary:hover {
+  color: var(--text-color-on-primary);
+  background-color: var(--primary-color);
+}
+
+.btn-outline-secondary {
+  color: var(--text-color-muted);
+  border-color: var(--border-color);
+}
+.btn-outline-secondary:hover {
+  color: var(--text-color-base);
+  background-color: #e9ecef;
+  border-color: var(--border-color);
+}
+
+.btn-outline-accent {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.btn-outline-accent:hover {
+  color: var(--text-color-on-accent);
+  background-color: var(--accent-color);
+}
+
+.btn-success {
+  color: #fff;
+  background-color: var(--accent-color); /* Usar el acento para éxito */
+  border-color: var(--accent-color);
+}
+.btn-success:hover {
+  color: #fff;
+  background-color: var(--accent-color-dark);
+  border-color: var(--accent-color-dark);
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.btn-danger:hover {
+  color: #fff;
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+.btn-outline-danger:hover {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.hero {
+  background: linear-gradient(var(--hero-overlay-start), var(--hero-overlay-end)), var(--hero-bg-image) no-repeat center center;
+  background-size: cover;
+  color: var(--hero-text-color);
+  padding: 4rem 1.5rem; /* Menos padding vertical */
+  text-align: center;
+  margin-bottom: 2.5rem; /* Menos margen inferior */
+}
+
+.hero h1 {
+  color: var(--hero-text-color);
+  font-size: 2.5rem; /* Más pequeño */
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+  font-size: 1.1rem; /* Más pequeño */
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  background-color: var(--footer-bg-color);
+  color: var(--text-color-footer);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin-top: 3.5rem;
+  font-size: 0.875rem;
+}
+.footer p {
+    margin-bottom: 0.25rem;
+}
+.footer a {
+    color: var(--primary-color-light);
+    text-decoration: none;
+}
+.footer a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.page-section {
+  padding: 2rem 0; /* Menos padding vertical para secciones */
+}
+
+.section-title-container {
+  margin-bottom: 2rem; /* Menos margen inferior */
+  text-align: center;
+}
+.section-title {
+    font-size: 1.75rem; /* Más pequeño */
+    font-weight: 600;
+    color: var(--text-color-base);
+    margin-bottom: 0;
+    padding-bottom: 0.75rem;
+    position: relative;
+    display: inline-block;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 60px; /* Línea más corta */
+    height: 3px;
+    background: var(--primary-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.app-main-content {
+  padding-top: 0;
+  padding-bottom: 2rem;
+  min-height: calc(100vh - 250px); /* Ajustar según altura de navbar y footer */
+}
